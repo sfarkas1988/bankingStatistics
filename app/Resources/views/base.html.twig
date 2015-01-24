@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de" ng-app="banking-stats">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+    {% stylesheets
+    '@AppBundle/Resources/public/components/bootstrap/dist/css/bootstrap.min.css'
+    '@AppBundle/Resources/public/components/metisMenu/dist/metisMenu.min.css'
+    '@AppBundle/Resources/public/components/startbootstrap-sb-admin-2/dist/css/timeline.css'
+    '@AppBundle/Resources/public/components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css'
+    '@AppBundle/Resources/public/components/morrisjs/morris.css'
+    '@AppBundle/Resources/public/components/font-awesome/css/font-awesome.min.css'
+    '@AppBundle/Resources/public/components/bootstrap-daterangepicker/daterangepicker-bs2.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/app/style.css') }}" />
+    {% endblock %}
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body ng-controller="{{ (app.request.get('_route')|capitalize)~'Ctrl' }}">
+<div id="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        {% include 'nav_top.html.twig' %}
+        {% include 'nav_left.html.twig' %}
+    </nav>
+
+    <div id="page-wrapper" class="hidden">
+        {% block body %}{% endblock %}
+        </div>
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+{% javascripts
+'@AppBundle/Resources/public/components/jquery/dist/jquery.min.js'
+'@AppBundle/Resources/public/components/bootstrap/dist/js/bootstrap.min.js'
+'@AppBundle/Resources/public/components/metisMenu/dist/metisMenu.min.js'
+'@AppBundle/Resources/public/components/raphael/raphael-min.js'
+'@AppBundle/Resources/public/components/morrisjs/morris.min.js'
+'@AppBundle/Resources/public/components/moment/moment.js'
+'@AppBundle/Resources/public/components/moment/locale/de.js'
+'@AppBundle/Resources/public/components/bootstrap-daterangepicker/daterangepicker.js'
+'@startbootstrap_sb_admin_2_js'
+'@angular_js'
+%}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+<script src="{{ asset('bundles/app/js/app.js') }}"></script>
+</body>
+</html>

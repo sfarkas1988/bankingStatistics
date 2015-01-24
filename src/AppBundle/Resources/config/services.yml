@@ -1,0 +1,30 @@
+services:
+    #Chart
+    app.abstract_chart:
+        class: AppBundle\Service\Chart\AbstractChart
+        abstract: true
+        arguments:
+            - @app.csv_reader
+            - @app.filter
+
+    app.charts.bar_category:
+        class: AppBundle\Service\Chart\BarCategory
+        parent: app.abstract_chart
+
+    app.chart.sum:
+        class: AppBundle\Service\Chart\Sum
+        parent: app.abstract_chart
+
+    #Other
+    app.formatter:
+        class: AppBundle\Service\Formatter
+
+    app.csv_reader:
+        class: AppBundle\Service\CsvReader
+        arguments:
+            - "%app_csv_file%"
+
+    app.filter:
+        class: AppBundle\Service\Filter
+        arguments:
+            - "%filter_keys%"

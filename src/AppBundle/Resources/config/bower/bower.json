@@ -1,0 +1,11 @@
+{
+    "name": "app-bundle",
+    "dependencies": {
+        "angular": "master",
+        "startbootstrap-sb-admin-2":  "master",
+        "bootstrap-daterangepicker": "1.3.17"
+    },
+    "resolutions":{
+        "angular": "master"
+    }
+}

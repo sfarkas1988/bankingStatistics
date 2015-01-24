@@ -1,0 +1,14 @@
+project_name: Nur Bares ist Wahres
+menu.months: Monatsansicht
+menu.years: Jahresansicht
+income: Einnahmen
+outcome: Ausgaben
+balance: Bilanz
+title.outcome.category: Ausgaben nach Kategorien
+title.income.category: Einnahmen nach Kategorien
+title.outcome.table: Ausgaben tabellarisch
+title.income.table: Einnahmen tabellarisch
+date: Datum
+category: Kategorie
+value: Wert
+notification.no_data: Keine Daten

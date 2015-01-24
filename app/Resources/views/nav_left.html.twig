@@ -1,0 +1,28 @@
+{#<li{% if app.request.get('_route') == 'homepage' %} class="active"{% endif %}><a href="{{ path('homepage') }}">Aktueller Monat</a></li>#}
+{#<li{% if app.request.get('_route') == 'outgoing' %} class="active"{% endif %}><a href="{{ path('outgoing') }}">Ausgaben</a></li>#}
+
+
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li>
+                <div id="reportrange">
+                    <i class="fa fa-calendar fa-lg"></i>
+                    <span>{{ first_day|date('d.m.Y') }} - {{ last_day|date('d.m.Y') }}</span> <b class="caret pull-right"></b>
+                </div>
+                <!-- /input-group -->
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-area-chart fa-fw"></i>{{ 'menu.months'|trans }}</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-bar-chart fa-fw"></i>{{ 'menu.years'|trans }}</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-pie-chart fa-fw"></i>{{ 'menu.categories'|trans }}</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>
+<!-- /.navbar-static-side -->
